@@ -4,18 +4,22 @@ import java.util.*;
 import java.util.ArrayList;
 import java.io.*;
 
+
 /**
  * Class CoinSorterMachine works with an abstract Coin object and reads in a data file, parsing integers
  * and building a bank of coins that is then separated by type and value.
  * @version 03/31/2022
  * @author Nate Alexander
+ * collaboration with Michael Yancy and Sean Donahue.
  */
+
 
 public class CoinSorterMachine {
     private ArrayList<Coin> coins;
     private ArrayList<Coin> coinMap;
     private int[] typeCounts;
 
+    
 
     /**
      * initializes coins ArrayList
@@ -34,6 +38,7 @@ public class CoinSorterMachine {
 
     }
 
+    
     private Coin makeCoin(double value) {
         for(Coin c : coinMap)   {
             if(c.getValue() == value)
@@ -42,10 +47,13 @@ public class CoinSorterMachine {
         return null;
     }
 
+    
     /**
      * use one or two Scanner objects, prompting user for the appropriate file
      * name and importing the data from filename – MUST handle diabolic values!
      */
+    
+    
     public void depositCoins() {
         System.out.println("Depositing coins...");
         try {
@@ -80,6 +88,7 @@ public class CoinSorterMachine {
         }
     }
 
+    
 
     /**
      * Prints deposit summary using a DecimalFormat object (see output section)
@@ -95,8 +104,10 @@ public class CoinSorterMachine {
         }
         System.out.println("TOTAL DEPOSIT: " + df.format(getTotalValue()));
 
+        
     }
 
+    
     /**
      *
      * @return the total value of all Coin objects stored in coins as a double
@@ -113,6 +124,8 @@ public class CoinSorterMachine {
      * main method for the class should use these exact three lines of code
      * @param args
      */
+    
+    
     public static void main(String[] args){
         CoinSorterMachine app = new CoinSorterMachine();
         app.depositCoins();
